@@ -3,13 +3,17 @@ Run Neo4J server with OSv on the cloud.
 
 ### Requirements
 
-Install `qemu`.
+###### Install `qemu`.
 
 For OSX:
 ```shell
 brew install qemu
 export CAPSTAN_QEMU_PATH=/usr/local/Cellar/qemu/2.5.0_2/bin/qemu-system-x86_64
 ```
+
+###### Install Capstan
+
+[Capstan](http://osv.io/capstan/) will actually build the image for you.
 
 
 ### Config
