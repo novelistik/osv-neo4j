@@ -1,4 +1,4 @@
-.PHONY: clean
+.PHONY: clean config build
 
 NEO4J_VERSION := 3.0.0-M05
 NEO4J_EDITION := enterprise
