@@ -2,7 +2,6 @@ base: cloudius/osv-openjdk8
 cmdline: >
   --cwd=/neo4j
   /java.so
-  -server
   -Dorg.neo4j.config.file=/neo4j/conf/neo4j.conf
   -Dneo4j.ext.udc.source=tarball
   -Dorg.neo4j.cluster.logdirectory=/data/log

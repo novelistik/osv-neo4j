@@ -1,4 +1,4 @@
-.PHONY: module
+.PHONY: clean
 
 NEO4J_VERSION := 3.0.0-M05
 NEO4J_EDITION := enterprise
@@ -15,6 +15,14 @@ ROOTFS/neo4j: neo4j.tar.gz
 	tar --extract --file neo4j.tar.gz --directory ROOTFS/ && \
   mv ROOTFS/neo4j-$(NEO4J_EDITION)-$(NEO4J_VERSION) ROOTFS/neo4j
 
+ROOTFS/.configured:	ROOTFS/neo4j
+	(cd ROOTFS/neo4j && bash ../../config.sh) && \
+  touch ROOTFS/.configured
 
-module:
-	echo hello
+config: ROOTFS/.configured
+
+build: config
+	capstan build
+
+clean:
+	rm -rf neo4j-*tar* ROOTFS
